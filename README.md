@@ -45,56 +45,56 @@ This research investigates sexual behavior profiles among adolescents (ages 13-1
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Analysis Pipeline                         │
+│                    Analysis Pipeline                        │
 ├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  1. Initial Exploration (Notebook 1)                         │
-│     ├── Survey question definitions                          │
-│     ├── Missing data patterns visualization                  │
-│     ├── Demographics & distributions                         │
-│     └── Correlation analysis (motivation for FA)             │
-│                                                              │
-│  2. Data Cleaning (Notebook 2)                               │
-│     ├── Filter participants >50% missing                     │
-│     ├── Skip logic application (negative coding)             │
-│     ├── Categorical variable recoding (12 operations)        │
-│     └── MICE imputation                                      │
-│                                                              │
-│  3. Factor Analysis & Clustering (Notebook 3)                │
-│     ├── Bartlett's & KMO tests (data suitability)            │
-│     ├── Factor extraction (Kaiser criterion)                 │
-│     ├── 8 clustering methods tested:                         │
-│     │   • Affinity Propagation, Agglomerative, BIRCH         │
-│     │   • OPTICS, K-Means, Mean Shift                        │
-│     │   • Spectral, Gaussian Mixture Model                   │
-│     ├── 3 evaluation indices:                                │
-│     │   • Silhouette, Calinski-Harabasz, Davies-Bouldin      │
-│     └── Result: 5 clusters (K-Means, BIRCH, Gaussian agree)  │
-│                                                              │
-│  4. Susceptibility Models (Notebook 4)                       │
-│     ├── Data integration:                                    │
-│     │   • 23 behavioral questions (literature-based)         │
-│     │   • 8 network variables (from Gephi)                   │
-│     │   • 5 cluster labels (target)                          │
-│     ├── Train/test split (70/30, stratified)                 │
-│     ├── 4 models: Decision Tree, Random Forest,              │
-│     │            LASSO, XGBoost                               │
-│     └── Feature importance extraction                        │
-│                                                              │
-│  5. Cluster Profiling (Notebook 5)                           │
-│     ├── Consolidate feature importance (4 models)            │
-│     ├── Profile each of 5 clusters:                          │
-│     │   • Demographics (age, sex)                            │
-│     │   • Behavioral characteristics                         │
-│     │   • Network position                                   │
-│     ├── Radar charts for comparison                          │
-│     └── Intervention implications                            │
-│                                                              │
-│  * Network Analysis (Gephi - external)                       │
-│     ├── Friendship network from peer nominations             │
-│     ├── 8 metrics: centrality, clustering, community         │
-│     └── Export → merge with survey data                      │
-│                                                              │
+│                                                             │
+│  1. Initial Exploration (Notebook 1)                        │
+│     ├── Survey question definitions                         │
+│     ├── Missing data patterns visualization                 │
+│     ├── Demographics & distributions                        │
+│     └── Correlation analysis (motivation for FA)            │
+│                                                             │
+│  2. Data Cleaning (Notebook 2)                              │
+│     ├── Filter participants >50% missing                    │
+│     ├── Skip logic application (negative coding)            │
+│     ├── Categorical variable recoding (12 operations)       │
+│     └── MICE imputation                                     │
+│                                                             │
+│  3. Factor Analysis & Clustering (Notebook 3)               │
+│     ├── Bartlett's & KMO tests (data suitability)           │
+│     ├── Factor extraction (Kaiser criterion)                │
+│     ├── 8 clustering methods tested:                        │
+│     │   • Affinity Propagation, Agglomerative, BIRCH        │
+│     │   • OPTICS, K-Means, Mean Shift                       │
+│     │   • Spectral, Gaussian Mixture Model                  │
+│     ├── 3 evaluation indices:                               │
+│     │   • Silhouette, Calinski-Harabasz, Davies-Bouldin     │
+│     └── Result: 5 clusters (K-Means, BIRCH, Gaussian agree) │
+│                                                             │
+│  4. Susceptibility Models (Notebook 4)                      │
+│     ├── Data integration:                                   │
+│     │   • 23 behavioral questions (literature-based)        │
+│     │   • 8 network variables (from Gephi)                  │
+│     │   • 5 cluster labels (target)                         │
+│     ├── Train/test split (70/30, stratified)                │
+│     ├── 4 models: Decision Tree, Random Forest,             │
+│     │            LASSO, XGBoost                             │
+│     └── Feature importance extraction                       │
+│                                                             │
+│  5. Cluster Profiling (Notebook 5)                          │
+│     ├── Consolidate feature importance (4 models)           │
+│     ├── Profile each of 5 clusters:                         │
+│     │   • Demographics (age, sex)                           │
+│     │   • Behavioral characteristics                        │
+│     │   • Network position                                  │
+│     ├── Radar charts for comparison                         │
+│     └── Intervention implications                           │
+│                                                             │
+│  * Network Analysis (Gephi - external)                      │
+│     ├── Friendship network from peer nominations            │
+│     ├── 8 metrics: centrality, clustering, community        │
+│     └── Export → merge with survey data                     │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
