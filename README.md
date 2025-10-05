@@ -318,7 +318,7 @@ This project leverages the strengths of both Python and R:
 - **[Data Dictionary](docs/data_dictionary.md)** - Variable descriptions & coding
 - **[Methodology](docs/methodology.md)** - Detailed analytical methods
 - **[Thesis PDF](Individual%20Attributes%20and%20Social%20Network%20Predictors%20for%20Sexual%20Behaviour%20Pro%20les%20Among%20Adolescents%20in%20a%20Rural%20Area.pdf)** - Complete thesis document
-- **Defense Slides** - Thesis defense presentation (December 7th, 2021)
+- **[Defense Slides](Presentation_Spanish.pdf)** - Thesis defense presentation (December 7th, 2021) *(in Spanish)*
 
 ---
 
