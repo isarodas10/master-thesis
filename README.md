@@ -344,8 +344,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Isabella Rodas**  
 Master's Student | Universidad de los Andes  
-📧 Email: [isabella.rodas.arango@gmail.com]  
-🔗 LinkedIn: [Your LinkedIn]  
+📧 Email: [isabella.rodas.arango@gmail.com](mailto:isabella.rodas.arango@gmail.com)  
+🔗 LinkedIn: [Isabella Rodas Arango](https://www.linkedin.com/in/isabella-rodas-arango/)  
 🐦 GitHub: [@isarodas10](https://github.com/isarodas10)
 
 ---
@@ -353,9 +353,8 @@ Master's Student | Universidad de los Andes
 ## 🙏 Acknowledgments
 
 - Thesis advisor: Felipe Montes and Ana María Guerra 
-- Participating schools and students in Barú, Colombia
-- Research funding: [Funding Source, if applicable]
-- Community partners and collaborators
+- Institución Educativa Santa Ana and its students in Barú, Colombia
+- IsBaru project participants and collaborators
 
 ---
 
@@ -391,7 +390,7 @@ If you use this research, methodology, or code, please cite:
 
 If you find this research useful, please consider giving it a star! It helps others discover the work.
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/master-thesis?style=social)](https://github.com/yourusername/master-thesis/stargazers)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/master-thesis?style=social)](https://github.com/isarodas10/master-thesis/stargazers)
 
 ---
 
