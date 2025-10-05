@@ -274,15 +274,17 @@ source("xgboost.R")
 
 Through rigorous Factor Analysis and multi-algorithm clustering, we identified **5 distinct behavioral profiles**:
 
-| Cluster | Size | Distinguishing Features |
-|---------|------|------------------------|
-| **Cluster 0** | Varies | Unique demographic, behavioral, and network characteristics |
-| **Cluster 1** | Varies | Distinct pattern in substance use, peer influence, and network position |
-| **Cluster 2** | Varies | Specific age/sex distribution and behavioral attitudes |
-| **Cluster 3** | Varies | Characteristic network centrality and risk perception |
-| **Cluster 4** | Varies | Notable combination of individual and social context factors |
+| Cluster | Size (n) | Description | Key Characteristics |
+|---------|----------|-------------|---------------------|
+| **Cluster 0** | 22 | **High-Risk Early Initiators** | Predominantly male (13-16 years), early sexual debut (10-13 years), risky behavior (no contraception, substance use during first sex), currently in relationships but haven't had sex with current partner yet expect to within the year despite not preferring it. Shows signs of peer pressure. |
+| **Cluster 1** | 126 | **Abstinent/Uninitiated** | Predominantly female (13-15 years), majority in or have been in relationships, no sexual experience, do not expect to have sex within the next year. Represents over half the sample (55%). |
+| **Cluster 2** | 42 | **Safe & Experienced** | Predominantly male (15-17 years), in relationships, older sexual debut (14+ years), consistent contraceptive use, no substance use during sex, sexually active with current partner, worried about STDs/pregnancy, expect to have sex willingly in next year. Practicing safe sex. |
+| **Cluster 3** | 13 | **Private/Reluctant to Disclose** | Gender-balanced (51% male, 49% female, 15-16 years), in relationships, understand sexual intercourse but refuse to answer questions about sexual experience and future intentions. May find survey overwhelming or too private. |
+| **Cluster 4** | 25 | **Uninformed/Limited Knowledge** | Young (13-15 years), 55% female, 45% male, some identify as other gender, in relationships or don't disclose status, **do not understand the term "sexual intercourse"**, zero knowledge about sex and what it entails. |
 
 *Note: Detailed cluster profiles with demographic breakdowns, behavioral patterns, and network characteristics are available in **Notebook 5: Cluster Profiling & Interpretation**.*
+
+**Key Insight:** The profiles range from high-risk early initiators (Cluster 0) to uninformed youth with zero sexual knowledge (Cluster 4), highlighting the need for **cluster-specific interventions** rather than one-size-fits-all approaches.
 
 *(Complete thesis results: see PDF in repository)*
 
@@ -439,14 +441,6 @@ If you use this research, methodology, or code, please cite:
 - [ ] Machine learning interpretability (SHAP values)
 - [ ] Intervention program development
 - [ ] Publication in peer-reviewed journal
-
----
-
-## ⭐ Star This Repository
-
-If you find this research useful, please consider giving it a star! It helps others discover the work.
-
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/master-thesis?style=social)](https://github.com/isarodas10/master-thesis/stargazers)
 
 ---
 
