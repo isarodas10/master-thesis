@@ -2,6 +2,8 @@
 
 Detailed description of analytical methods used in this research.
 
+> **📝 Update Note (October 2025):** This methodology document describes the final thesis approach using Factor Analysis + 8 Clustering Methods. The complete implementation is available in the **5 Jupyter notebooks** in the `notebooks/` directory. Original 2021 code (including LCA exploration) is preserved in `original_code/` for reference.
+
 ---
 
 ## Table of Contents
