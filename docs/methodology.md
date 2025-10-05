@@ -8,11 +8,14 @@ Detailed description of analytical methods used in this research.
 1. [Study Design](#study-design)
 2. [Data Collection](#data-collection)
 3. [Data Preprocessing](#data-preprocessing)
-4. [Exploratory Clustering](#exploratory-clustering)
-5. [Latent Class Analysis](#latent-class-analysis)
+4. [Factor Analysis](#factor-analysis)
+5. [Clustering Methods](#clustering-methods)
 6. [Predictive Modeling](#predictive-modeling)
 7. [Network Analysis](#network-analysis)
-8. [Validation & Evaluation](#validation--evaluation)
+8. [Cluster Profiling](#cluster-profiling)
+9. [Validation & Evaluation](#validation--evaluation)
+
+**Note:** This document describes the final methodology used in the thesis. The original 2021 analysis code (including LCA exploration) is preserved in `original_code/` but LCA was not used in the final thesis.
 
 ---
 
@@ -25,7 +28,7 @@ Detailed description of analytical methods used in this research.
 - **Population:** Adolescents (ages 13-17) attending rural schools
 - **Sample size:** N = 242
 - **Sampling:** Convenience sample from participating schools
-- **Time period:** [Data collection period]
+- **Time period:** April 2019
 
 ### Inclusion Criteria
 - Age 13-17 years
