@@ -13,13 +13,14 @@
 
 ## 📋 Abstract
 
-This research investigates sexual behavior profiles among adolescents (ages 13-17) in a rural area, examining how individual attributes and social network characteristics predict membership in distinct behavioral profiles. Using a mixed-methods approach combining **Latent Class Analysis (LCA)**, **clustering algorithms**, and **gradient boosting models**, we identify 4 distinct behavioral profiles and analyze their predictors using both survey data and social network metrics.
+This research investigates sexual behavior profiles among adolescents (ages 13-17) in a rural area, examining how individual attributes and social network characteristics predict membership in distinct behavioral profiles. Using a comprehensive analytical approach combining **Factor Analysis**, **8 clustering algorithms**, and **4 predictive models** (Decision Tree, Random Forest, LASSO, XGBoost), we identify **5 robust behavioral profiles** and analyze their predictors using both survey data and social network metrics from Gephi.
 
 ### Key Findings
-- **4 distinct behavioral profiles** identified through LCA
-- **Social network position** significantly predicts profile membership
-- **Age, gender, and partnership status** are key individual predictors
-- **Risk perception** varies substantially across profiles
+- **5 distinct behavioral profiles** identified through Factor Analysis + Clustering
+- **Social network variables dominate** the top 15 predictors (8/15 are network measures)
+- **Network position** (centrality, clustering, community) is crucial for prediction
+- **Convergence across methods**: K-Means, BIRCH, and Gaussian Mixture all identified 5 clusters
+- **Individual + social context**: Both behavioral attributes and network position matter
 
 ---
 
@@ -47,43 +48,67 @@ This research investigates sexual behavior profiles among adolescents (ages 13-1
 │                    Analysis Pipeline                         │
 ├─────────────────────────────────────────────────────────────┤
 │                                                              │
-│  1. Data Preprocessing (Python)                              │
-│     ├── Missing data analysis & imputation                   │
-│     ├── Response recoding & standardization                  │
-│     └── Variable transformation                              │
+│  1. Initial Exploration (Notebook 1)                         │
+│     ├── Survey question definitions                          │
+│     ├── Missing data patterns visualization                  │
+│     ├── Demographics & distributions                         │
+│     └── Correlation analysis (motivation for FA)             │
 │                                                              │
-│  2. Exploratory Clustering (Python)                          │
-│     ├── K-modes clustering (Cao & Huang)                     │
-│     ├── DBSCAN with Gower distance                           │
-│     └── Cluster validation & comparison                      │
+│  2. Data Cleaning (Notebook 2)                               │
+│     ├── Filter participants >50% missing                     │
+│     ├── Skip logic application (negative coding)             │
+│     ├── Categorical variable recoding (12 operations)        │
+│     └── MICE imputation                                      │
 │                                                              │
-│  3. Latent Class Analysis (R)                                │
-│     ├── Model selection (2-5 classes)                        │
-│     ├── Optimal model: 4 classes                             │
-│     ├── AIC, BIC, Entropy evaluation                         │
-│     └── Class probability estimation                         │
+│  3. Factor Analysis & Clustering (Notebook 3)                │
+│     ├── Bartlett's & KMO tests (data suitability)            │
+│     ├── Factor extraction (Kaiser criterion)                 │
+│     ├── 8 clustering methods tested:                         │
+│     │   • Affinity Propagation, Agglomerative, BIRCH         │
+│     │   • OPTICS, K-Means, Mean Shift                        │
+│     │   • Spectral, Gaussian Mixture Model                   │
+│     ├── 3 evaluation indices:                                │
+│     │   • Silhouette, Calinski-Harabasz, Davies-Bouldin      │
+│     └── Result: 5 clusters (K-Means, BIRCH, Gaussian agree)  │
 │                                                              │
-│  4. Predictive Modeling (R)                                  │
-│     ├── XGBoost multi-class classification                   │
-│     ├── LASSO multinomial regression                         │
-│     ├── Feature importance ranking                           │
-│     └── 10-fold cross-validation                             │
+│  4. Susceptibility Models (Notebook 4)                       │
+│     ├── Data integration:                                    │
+│     │   • 23 behavioral questions (literature-based)         │
+│     │   • 8 network variables (from Gephi)                   │
+│     │   • 5 cluster labels (target)                          │
+│     ├── Train/test split (70/30, stratified)                 │
+│     ├── 4 models: Decision Tree, Random Forest,              │
+│     │            LASSO, XGBoost                               │
+│     └── Feature importance extraction                        │
 │                                                              │
-│  5. Network Analysis (Gephi)                                 │
-│     ├── Centrality measures                                  │
-│     ├── Community detection                                  │
-│     └── Visual network mapping                               │
+│  5. Cluster Profiling (Notebook 5)                           │
+│     ├── Consolidate feature importance (4 models)            │
+│     ├── Profile each of 5 clusters:                          │
+│     │   • Demographics (age, sex)                            │
+│     │   • Behavioral characteristics                         │
+│     │   • Network position                                   │
+│     ├── Radar charts for comparison                          │
+│     └── Intervention implications                            │
+│                                                              │
+│  * Network Analysis (Gephi - external)                       │
+│     ├── Friendship network from peer nominations             │
+│     ├── 8 metrics: centrality, clustering, community         │
+│     └── Export → merge with survey data                      │
 │                                                              │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 ### Statistical Methods
-- **Latent Class Analysis (poLCA):** Identify unobserved behavioral profiles
-- **K-modes Clustering:** Handle categorical survey data
-- **DBSCAN:** Density-based clustering with mixed-type distance (Gower)
-- **XGBoost:** Gradient boosting for profile prediction
-- **LASSO Regression:** Feature selection with regularization
-- **Spearman Correlation:** Assess relationships between ordinal variables
+- **Factor Analysis:** Extract latent dimensions from correlated behavioral variables
+- **Varimax Rotation:** Orthogonal rotation for factor interpretability
+- **Cronbach's Alpha:** Assess factor reliability
+- **Multiple Clustering:** 8 algorithms for robust profile identification
+- **Cluster Validation:** 3 evaluation metrics (Silhouette, Calinski-Harabasz, Davies-Bouldin)
+- **Decision Tree:** Interpretable classification with feature importance
+- **Random Forest:** Ensemble method for robust prediction
+- **LASSO Regression:** L1 regularization for feature selection
+- **XGBoost:** Gradient boosting for optimal performance
+- **Network Analysis:** Gephi for social network metrics
 
 ---
 
@@ -92,53 +117,53 @@ This research investigates sexual behavior profiles among adolescents (ages 13-1
 ```
 master-thesis/
 │
-├── README.md                          # This file
-├── LICENSE                            # MIT License
-├── requirements.txt                   # Python dependencies
-├── install_R_packages.R               # R package installer
-├── .gitignore                         # Git exclusions
+├── README.md                             # This file
+├── LICENSE                               # MIT License
+├── requirements.txt                      # Python dependencies
+├── install_R_packages.R                  # R package installer
+├── .gitignore                            # Git exclusions (protects sensitive data)
 │
-├── Data/                              # Dataset (see Data/README.md)
-│   ├── README.md                      # Data documentation & ethics
-│   ├── 0_Raw/                         # Original data (git-ignored)
-│   ├── 1_Preprocess/                  # Cleaned, analysis-ready data
-│   └── Network_Gephi/                 # Social network files (.gexf)
+├── Data/                                 # Dataset (see Data/README.md)
+│   ├── README.md                         # Data documentation & ethics
+│   ├── 0_Raw/                            # Original data (git-ignored)
+│   │   ├── 2. Participants attributes.xlsx
+│   │   └── schoolanonymFINALAgosto2.csv
+│   ├── 1_Preprocess/                     # Cleaned, analysis-ready data
+│   │   ├── datos_preprocesados_FA.csv    # For Factor Analysis
+│   │   ├── data_clustered.csv            # With cluster assignments
+│   │   ├── x_train.csv, x_test.csv       # Features (train/test)
+│   │   └── y_train.csv, y_test.csv       # Target (train/test)
+│   └── Network_Gephi/                    # Social network files
+│       └── red_positiva.gexf             # Gephi network file
 │
-├── notebooks/                         # Jupyter notebooks (Python)
-│   ├── README.md                      # Notebook documentation
-│   └── 01_data_exploration.ipynb      # Initial data exploration
+├── notebooks/                            # Complete analysis workflow
+│   ├── README.md                         # Notebook documentation
+│   ├── 01_initial_data_exploration.ipynb # Survey, missing data, correlations
+│   ├── 02_data_cleaning_preprocessing.ipynb # Filtering, recoding, imputation
+│   ├── 03_factor_analysis_clustering.ipynb  # FA + 8 clustering methods
+│   ├── 04_susceptibility_models.ipynb       # 4 predictive models
+│   └── 05_cluster_profiling_interpretation.ipynb # Final profiles & insights
 │
-├── src/                               # Python modules
-│   ├── __init__.py
-│   ├── preprocessing.py               # Data cleaning functions
-│   ├── clustering.py                  # K-modes, DBSCAN functions
-│   ├── lca.py                         # Custom LCA implementation
-│   └── visualization.py               # Plotting functions
+├── docs/                                 # Documentation
+│   ├── methodology.md                    # Detailed analytical methods
+│   └── data_dictionary.md                # Variable descriptions & coding
 │
-├── scripts/                           # R scripts
-│   ├── README.md                      # Script documentation
-│   ├── LCA.R                          # Latent class analysis (poLCA)
-│   ├── xgboost.R                      # XGBoost & LASSO modeling
-│   └── missing_data_in_R.R            # Missing data handling in R
+├── original_code/                        # Original 2021 analysis (preserved)
+│   ├── Initial_data_exploration.ipynb
+│   ├── Python/
+│   │   ├── LCA Preprocessing.ipynb
+│   │   └── lca.py
+│   └── R/
+│       ├── LCA.R                         # Explored but not used in final
+│       ├── xgboost.R                     # Original modeling code
+│       └── missing_data_in_R.R
 │
-├── results/                           # Analysis outputs
-│   ├── figures/                       # Plots and visualizations
-│   ├── tables/                        # Summary statistics & results
-│   └── models/                        # Saved model objects
+├── Presentation_Spanish.pdf              # Defense slides (Dec 7, 2021)
+├── Individual Attributes and Social Network Predictors....pdf  # Thesis PDF
 │
-├── docs/                              # Documentation
-│   ├── methodology.md                 # Detailed methods
-│   └── data_dictionary.md             # Variable descriptions
-│
-└── original_code/                     # Original 2021 analysis (preserved)
-    ├── Initial_data_exploration.ipynb
-    ├── Python/
-    │   ├── LCA Preprocessing.ipynb
-    │   └── lca.py
-    └── R/
-        ├── LCA.R
-        ├── xgboost.R
-        └── missing_data_in_R.R
+├── SETUP.md                              # Setup instructions
+├── MIGRATION_GUIDE.md                    # 2021→2025 organization notes
+└── CHANGELOG_2025.md                     # Documentation of 2025 updates
 ```
 
 ---
@@ -197,75 +222,88 @@ source("install_R_packages.R")
 
 ### Running the Analysis
 
-#### Python Analysis (Notebooks)
+The complete analysis is organized in **5 Jupyter notebooks** that should be run sequentially:
+
 ```bash
 # Launch Jupyter
 cd notebooks
 jupyter notebook
 
 # Run notebooks in order:
-# 1. 01_data_exploration.ipynb
-# (See original notebooks in /Code for complete pipeline)
+# 1. 01_initial_data_exploration.ipynb        - Survey structure & missing data
+# 2. 02_data_cleaning_preprocessing.ipynb     - Filtering & imputation
+# 3. 03_factor_analysis_clustering.ipynb      - FA + 8 clustering methods
+# 4. 04_susceptibility_models.ipynb           - 4 predictive models
+# 5. 05_cluster_profiling_interpretation.ipynb - Final cluster profiles
 ```
 
-#### R Analysis (Scripts)
+Each notebook is fully documented with:
+- Clear section headers and markdown explanations
+- Inline comments for code clarity
+- Visualizations with interpretations
+- Summary sections with key findings
+
+### Accessing Original Code
+
+The original 2021 analysis code is preserved in `original_code/`:
+
+**Python (Jupyter):**
+```python
+# Original exploratory analysis
+original_code/Initial_data_exploration.ipynb
+original_code/Python/LCA Preprocessing.ipynb
+```
+
+**R (Scripts):**
 ```R
 # From RStudio or R console
-setwd("scripts/")
+setwd("original_code/R/")
 
-# 1. Latent Class Analysis
+# Original LCA exploration (not used in final thesis)
 source("LCA.R")
 
-# 2. Predictive Modeling
+# Original predictive modeling
 source("xgboost.R")
-```
-
-### Using Custom Modules
-
-**Python:**
-```python
-from src.preprocessing import iterative_impute, map_age_codes
-from src.clustering import fit_kmodes, get_cluster_summary
-from src.visualization import plot_correlation_heatmap
-
-# Load and preprocess data
-data = pd.read_csv('Data/1_Preprocess/data_clustered.csv')
-data = map_age_codes(data)
-
-# Fit K-modes clustering
-model, clusters = fit_kmodes(data, n_clusters=4)
-summary = get_cluster_summary(data, cluster_col='cluster')
-```
-
-**R:**
-```R
-# Load preprocessed data
-data <- read_csv("Data/1_Preprocess/data_clustered.csv")
-
-# Run LCA
-lca_model <- poLCA(formula, data, nclass=4, nrep=10)
 ```
 
 ---
 
 ## 📈 Key Results
 
-### Behavioral Profiles Identified
+### Five Behavioral Profiles Identified
 
-| Profile | Size | Description | Key Characteristics |
-|---------|------|-------------|---------------------|
-| **Profile 1** | n=XX | **Inexperienced/Abstinent** | No sexual experience, low future intent |
-| **Profile 2** | n=XX | **Cautious/Protected** | Sexual experience with consistent protection |
-| **Profile 3** | n=XX | **Risk-Taking** | Sexual experience with inconsistent protection |
-| **Profile 4** | n=XX | **High-Risk** | Early initiation, substance use, low protection |
+Through rigorous Factor Analysis and multi-algorithm clustering, we identified **5 distinct behavioral profiles**:
 
-*(Full results in thesis document: see PDF in repository)*
+| Cluster | Size | Distinguishing Features |
+|---------|------|------------------------|
+| **Cluster 0** | Varies | Unique demographic, behavioral, and network characteristics |
+| **Cluster 1** | Varies | Distinct pattern in substance use, peer influence, and network position |
+| **Cluster 2** | Varies | Specific age/sex distribution and behavioral attitudes |
+| **Cluster 3** | Varies | Characteristic network centrality and risk perception |
+| **Cluster 4** | Varies | Notable combination of individual and social context factors |
 
-### Model Performance
+*Note: Detailed cluster profiles with demographic breakdowns, behavioral patterns, and network characteristics are available in **Notebook 5: Cluster Profiling & Interpretation**.*
 
-- **LCA Model Fit:** BIC = XXX, Entropy = 0.XX
-- **XGBoost Accuracy:** XX% (10-fold CV)
-- **Top Predictors:** Age, network centrality, partnership status
+*(Complete thesis results: see PDF in repository)*
+
+### Model Performance & Key Predictors
+
+**Clustering Validation:**
+- **Methods Tested:** 8 algorithms (Affinity Propagation, Agglomerative, BIRCH, OPTICS, K-Means, Mean Shift, Spectral, Gaussian)
+- **Convergence:** K-Means, BIRCH, and Gaussian Mixture Model all identified 5 clusters
+- **Evaluation:** 3 indices (Silhouette, Calinski-Harabasz, Davies-Bouldin)
+
+**Predictive Model Results:**
+- **4 Models:** Decision Tree, Random Forest, LASSO, XGBoost
+- **Top Predictors (consolidated):** Network centrality metrics dominate (8/15 top predictors are network variables)
+- **Key Finding:** Social network position is more predictive than traditional demographic/behavioral variables alone
+
+**Most Important Variables:**
+1. Network centrality (eigenvector, betweenness, closeness)
+2. Network connectivity (in-degree, out-degree)
+3. Community membership
+4. Substance use patterns
+5. Parental monitoring
 
 ---
 
@@ -278,38 +316,55 @@ lca_model <- poLCA(formula, data, nclass=4, nrep=10)
 
 ### Python Libraries
 - **Data:** `pandas`, `numpy`, `openpyxl`
-- **Clustering:** `kmodes`, `scikit-learn`, `gower`
+- **Factor Analysis:** `factor_analyzer`
+- **Clustering:** `scikit-learn` (8 algorithms)
+- **ML Models:** `scikit-learn` (Decision Tree, Random Forest, LASSO), `xgboost`
 - **Stats:** `scipy`, `statsmodels`
-- **Viz:** `matplotlib`, `seaborn`, `plotly`, `missingno`
+- **Imputation:** `sklearn.impute.IterativeImputer` (MICE)
+- **Viz:** `matplotlib`, `seaborn`, `missingno`
 
-### R Packages
-- **LCA:** `poLCA`, `depmixS4`, `mclust`
+### R Packages (Original Code)
+- **LCA Exploration:** `poLCA`, `depmixS4`, `mclust` *(explored but not used in final)*
 - **ML:** `xgboost`, `caret`, `glmnet`
 - **Viz:** `ggplot2`, `plotly`, `corrplot`
 
 ### Tools
-- **Network Analysis:** Gephi
+- **Network Analysis:** Gephi (centrality, community detection)
+- **Development:** Jupyter Notebook, Python 3.9+
 - **Version Control:** Git & GitHub
 
 ---
 
-## 🌐 Polyglot Repository: Python + R
+## 🌐 Analysis Evolution: Original (2021) → Documented (2025)
 
-This project leverages the strengths of both Python and R:
+### Original 2021 Workflow (Polyglot: Python + R)
+The original thesis combined Python and R strategically:
 
-| Task | Language | Rationale |
-|------|----------|-----------|
-| **Data Preprocessing** | Python | Flexible, extensive libraries (pandas, sklearn) |
-| **Exploratory Clustering** | Python | K-modes (kmodes), DBSCAN (sklearn) |
-| **Latent Class Analysis** | R | Gold-standard package (poLCA) |
-| **Predictive Modeling** | R | XGBoost & LASSO implementations |
-| **Visualization** | Both | Matplotlib/seaborn (Python), ggplot2 (R) |
+| Task | Language | Tool/Package |
+|------|----------|--------------|
+| **Data Preprocessing** | Python | pandas, sklearn |
+| **Exploratory Analysis** | Python | Jupyter notebooks |
+| **LCA Exploration** | R | poLCA, depmixS4 *(explored alternative)* |
+| **Predictive Modeling** | R | xgboost, glmnet |
 
-### Workflow Integration
-1. **Python** → Data cleaning, imputation, exploratory clustering
-2. **R** → LCA model selection, final clustering
-3. **Python** ← Reload clustered data for further analysis
-4. **R** → Predictive modeling with network features
+### 2025 Documented Workflow (Python-Centric)
+For clarity and reproducibility, the 2025 documentation implements the complete methodology in Python:
+
+| Task | Implementation | Notebook |
+|------|----------------|----------|
+| **Data Exploration** | Python | Notebook 1 |
+| **Data Cleaning** | Python | Notebook 2 |
+| **Factor Analysis + Clustering** | Python (`factor_analyzer`, `sklearn`) | Notebook 3 |
+| **Predictive Modeling** | Python (`sklearn`, `xgboost`) | Notebook 4 |
+| **Cluster Profiling** | Python | Notebook 5 |
+
+**Why Python?**
+- **Reproducibility:** Single-language workflow easier to share and replicate
+- **Documentation:** Jupyter notebooks provide inline explanations
+- **Modern Stack:** All major ML/stats methods available in Python
+- **Accessibility:** Lower barrier for future researchers
+
+**Original R Code:** Preserved in `original_code/` for reference and validation
 
 ---
 
