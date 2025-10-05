@@ -1,0 +1,10 @@
+library(dplyr)
+library(readr)
+library(poLCA)
+library(plotly)
+library(corrplot)
+library(RColorBrewer)
+#library(Hmisc)
+
+current_working_dir <- dirname(rstudioapi::getActiveDocumentContext()$path)
+setwd(current_working_dir)
