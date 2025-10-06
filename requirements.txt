@@ -1,33 +1,96 @@
 # Python Dependencies for Master Thesis Project
 # Sexual Behavior Profiles & Social Network Analysis
+# Reorganized October 2025 for 5-notebook workflow
 
-# Data manipulation and analysis
+# ============================================================================
+# CORE DATA ANALYSIS
+# ============================================================================
+
+# Data manipulation
 pandas>=1.3.0
 numpy>=1.21.0
-openpyxl>=3.0.9  # For Excel file handling
+openpyxl>=3.0.9  # Excel file reading
 
-# Visualization
+# ============================================================================
+# STATISTICAL METHODS (Notebook 2 & 3)
+# ============================================================================
+
+# Factor Analysis (Notebook 3)
+factor-analyzer>=0.4.0  # Bartlett's, KMO, factor extraction, Varimax rotation
+
+# Statistical tests
+scipy>=1.7.0
+
+# ============================================================================
+# MACHINE LEARNING & CLUSTERING (Notebook 3 & 4)
+# ============================================================================
+
+# Clustering algorithms (Notebook 3: 8 algorithms)
+scikit-learn>=1.0.0  # K-Means, BIRCH, Agglomerative, Spectral, OPTICS, etc.
+
+# Predictive models (Notebook 4)
+xgboost>=1.5.0  # XGBoost classifier
+
+# Model evaluation
+# (included in scikit-learn: metrics, train_test_split, etc.)
+
+# ============================================================================
+# DATA PREPROCESSING (Notebook 2)
+# ============================================================================
+
+# Missing data imputation
+# (IterativeImputer from sklearn.experimental, included in scikit-learn)
+
+# ============================================================================
+# VISUALIZATION (All notebooks)
+# ============================================================================
+
 matplotlib>=3.4.0
 seaborn>=0.11.0
-plotly>=5.0.0
+missingno>=0.5.0  # Missing data visualization
 
-# Missing data visualization
-missingno>=0.5.0
+# ============================================================================
+# JUPYTER NOTEBOOKS
+# ============================================================================
 
-# Machine Learning & Clustering
-scikit-learn>=0.24.0
-kmodes>=0.12.0  # K-modes clustering for categorical data
-
-# Distance metrics
-gower>=0.1.2  # Gower distance for mixed data types
-
-# Statistical analysis
-scipy>=1.7.0
-statsmodels>=0.13.0
-
-# Network analysis (optional, if Python-based network analysis is added)
-networkx>=2.6.0
-
-# Jupyter
 jupyter>=1.0.0
 ipykernel>=6.0.0
+notebook>=6.4.0
+
+# ============================================================================
+# OPTIONAL: For running original 2021 code
+# ============================================================================
+
+# The following are only needed if exploring original_code/:
+# - networkx>=2.6.0  # For network analysis exploration
+# - statsmodels>=0.13.0  # For statistical models
+# - plotly>=5.0.0  # For interactive plots
+
+# ============================================================================
+# INSTALLATION
+# ============================================================================
+
+# To install all dependencies:
+#   pip install -r requirements.txt
+#
+# Recommended: Use virtual environment
+#   python -m venv venv
+#   source venv/bin/activate  # On Windows: venv\Scripts\activate
+#   pip install -r requirements.txt
+#
+# Verify installation:
+#   python -c "import pandas, numpy, sklearn, factor_analyzer, xgboost, seaborn; print('✓ All packages OK')"
+
+# ============================================================================
+# NOTES
+# ============================================================================
+
+# This requirements file reflects the final 5-notebook workflow:
+# 1. Initial Data Exploration
+# 2. Data Cleaning & Preprocessing (MICE imputation)
+# 3. Factor Analysis & Clustering (8 algorithms)
+# 4. Susceptibility Models (DT, RF, LASSO, XGBoost)
+# 5. Cluster Profiling & Interpretation
+
+# Original 2021 analysis used additional R packages.
+# See install_R_packages.R if you want to explore original_code/R/
