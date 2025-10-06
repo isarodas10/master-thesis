@@ -192,10 +192,7 @@ summary = data.groupby('Class_LCA').agg({
 
 ## References
 
-Survey questions adapted from:
-- [Add survey source/citation if applicable]
-- Developed in consultation with adolescent health experts
-- IRB approved protocol #XXXX
+Survey questions were developed in consultation with adolescent health experts
 
 ---
 

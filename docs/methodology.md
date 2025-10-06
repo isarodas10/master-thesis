@@ -39,7 +39,6 @@ Detailed description of analytical methods used in this research.
 - Completed minimum 50% of survey questions
 
 ### Ethical Approval
-- IRB/Ethics Committee: [Approval number]
 - Parental consent obtained
 - Adolescent assent obtained
 - Data anonymization protocol followed
