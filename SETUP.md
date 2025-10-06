@@ -78,34 +78,34 @@ The complete analysis is now unified in **Python** for reproducibility:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│              5-Notebook Analysis Pipeline                    │
+│              5-Notebook Analysis Pipeline                   │
 ├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  📊 Notebook 1: Initial Data Exploration                     │
-│     • Survey questions & definitions                         │
-│     • Missing data patterns                                  │
-│     • Demographics & correlations                            │
-│                                                              │
+│                                                             │
+│  📊 Notebook 1: Initial Data Exploration                    │
+│     • Survey questions & definitions                        │
+│     • Missing data patterns                                 │
+│     • Demographics & correlations                           │
+│                                                             │
 │  🧹 Notebook 2: Data Cleaning & Preprocessing               │
-│     • Filter participants (>50% missing)                     │
-│     • Skip logic & recoding                                  │
-│     • MICE imputation                                        │
-│                                                              │
-│  🔬 Notebook 3: Factor Analysis & Clustering                 │
-│     • Bartlett's & KMO tests                                 │
-│     • Factor extraction                                      │
-│     • 8 clustering methods → 5 clusters                      │
-│                                                              │
-│  🎯 Notebook 4: Susceptibility Models                        │
+│     • Filter participants (>50% missing)                    │
+│     • Skip logic & recoding                                 │
+│     • MICE imputation                                       │
+│                                                             │
+│  🔬 Notebook 3: Factor Analysis & Clustering                │
+│     • Bartlett's & KMO tests                                │
+│     • Factor extraction                                     │
+│     • 8 clustering methods → 5 clusters                     │
+│                                                             │
+│  🎯 Notebook 4: Susceptibility Models                       │
 │     • Merge: behavioral + network + clusters                │
-│     • 4 models: DT, RF, LASSO, XGBoost                       │
-│     • Feature importance                                     │
-│                                                              │
-│  📈 Notebook 5: Cluster Profiling & Interpretation           │
-│     • Consolidate feature importance                         │
-│     • Profile 5 clusters in detail                           │
-│     • Intervention implications                              │
-│                                                              │
+│     • 4 models: DT, RF, LASSO, XGBoost                      │
+│     • Feature importance                                    │
+│                                                             │
+│  📈 Notebook 5: Cluster Profiling & Interpretation          │
+│     • Consolidate feature importance                        │
+│     • Profile 5 clusters in detail                          │
+│     • Intervention implications                             │
+│                                                             │
 └─────────────────────────────────────────────────────────────┘
 ```
 
