@@ -9,6 +9,8 @@
 
 > 🕐 **Timeline Note:** The original analysis was conducted in **2021** as part of my master's thesis research. This repository was organized and documented for public showcase in **October 2025**. The original analysis code is preserved in the `original_code/` directory.
 
+> ⚠️ **DATA PRIVACY DISCLAIMER:** The original research data contains sensitive information about adolescent participants and cannot be publicly shared. The Jupyter notebooks in this repository have been configured to run with **simulated data** for demonstration purposes. The analytical methods, code structure, and documentation accurately reflect the original 2021 thesis methodology, but the **specific numerical results shown in the notebook outputs are from simulated data and do not represent the actual research findings**. For the actual thesis results and conclusions, please refer to the thesis document (`Individual Attributes and Social Network Predictors for Sexual Behaviour Pro les Among Adolescents in a Rural Area.pdf`) and the defense presentation (`Presentation_Spanish.pdf`).
+
 ---
 
 ## 📋 Abstract
@@ -413,6 +415,36 @@ Master's Student | Universidad de los Andes
 - Thesis advisor: Felipe Montes and Ana María Guerra 
 - Institución Educativa Santa Ana and its students in Barú, Colombia
 - IsBaru project participants and collaborators
+
+---
+
+## 🔄 Repository Updates & Quality Assurance
+
+### October 2025 - Notebook Refinements
+
+The repository underwent comprehensive testing and refinement to ensure all notebooks execute successfully:
+
+**✅ All 5 Notebooks Successfully Run End-to-End**
+
+**Fixes & Improvements:**
+- **Notebook 2:** Fixed participant filtering logic to correctly identify >50% missing data (accounting for both nulls and skip codes)
+- **Notebook 3:** 
+  - Fixed `calculate_kmo` import typo (was `calculate_kms`)
+  - Resolved duplicate Factor column issues when re-running notebooks
+  - Fixed summary cell to use actual `Silhouette` scores instead of non-existent `Avg_Rank` column
+- **Notebook 5:**
+  - Fixed overlapping age distribution visualizations (switched to grouped bar charts)
+  - Added "Other" gender category to demographic plots
+- **Data Cleanup:** Removed 4 unused data files (`datos_preprocesados_FA.csv`, `data_clustered.csv`, `data_t.xlsx`, `clustering_evaluation.csv`)
+
+**Code Quality:**
+- Enhanced error handling and diagnostics throughout
+- Improved data validation checks
+- Added comprehensive inline documentation
+- Consistent variable naming and flow
+
+**Reproducibility:** 
+All notebooks can now be run sequentially from Notebook 1 → 5 without errors, producing complete analysis outputs with simulated data.
 
 ---
 
