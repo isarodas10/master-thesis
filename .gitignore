@@ -66,6 +66,9 @@ Data/0_Raw/*.xlsx
 Data/0_Raw/*.csv
 !Data/0_Raw/.gitkeep
 
+# Network data from Gephi
+Data/Network_Gephi/
+
 # Keep processed/anonymized data but optionally exclude if sensitive
 # Data/1_Preprocess/*.csv
 # Data/1_Preprocess/*.xlsx
