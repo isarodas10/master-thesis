@@ -353,7 +353,7 @@ notebooks/
 └── 05_cluster_profiling_interpretation.ipynb  # Notebook 5
 
 Assumes this parent structure:
-master-thesis/
+predictors-for-sexual-behaviour-profiles/
 ├── notebooks/          # You are here
 ├── Data/
 │   ├── 0_Raw/         # Input data (git-ignored)

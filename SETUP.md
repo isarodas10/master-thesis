@@ -10,8 +10,8 @@ Get started with this repository in 5 minutes.
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/isarodas10/master-thesis.git
-cd master-thesis
+git clone https://github.com/isarodas10/predictors-for-sexual-behaviour-profiles.git
+cd predictors-for-sexual-behaviour-profiles
 ```
 
 ### 2. Install Python Dependencies
@@ -210,7 +210,7 @@ python -m ipykernel install --user --name=venv
 **Solution:** R code is preserved but optional:
 ```R
 # From RStudio or R console
-setwd("path/to/master-thesis/original_code/R")
+setwd("path/to/predictors-for-sexual-behaviour-profiles/original_code/R")
 source("xgboost.R")  # Original modeling code
 source("LCA.R")      # LCA exploration (not in final thesis)
 ```

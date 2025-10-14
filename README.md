@@ -139,7 +139,7 @@ This research investigates sexual behavior profiles among adolescents (ages 13-1
 ## 🗂️ Repository Structure
 
 ```
-master-thesis/
+predictors-for-sexual-behaviour-profiles/
 │
 ├── README.md                             # This file
 ├── LICENSE                               # MIT License
@@ -213,8 +213,8 @@ master-thesis/
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/yourusername/master-thesis.git
-cd master-thesis
+git clone https://github.com/isarodas10/predictors-for-sexual-behaviour-profiles.git
+cd predictors-for-sexual-behaviour-profiles
 ```
 
 #### 2. Set Up Python Environment
@@ -498,7 +498,7 @@ If you use this research, methodology, or code, please cite:
   school  = {Universidad de los Andes},
   year    = {2021},
   type    = {Master's Thesis},
-  url     = {https://github.com/isarodas10/master-thesis}
+  url     = {https://github.com/isarodas10/predictors-for-sexual-behaviour-profiles}
 }
 ```
 

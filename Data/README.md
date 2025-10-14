@@ -250,7 +250,7 @@ If you use this data structure or methodology, please cite:
   school  = {Universidad de los Andes},
   year    = {2021},
   address = {Bogotá, Colombia},
-  url     = {https://github.com/isarodas10/master-thesis}
+  url     = {https://github.com/isarodas10/predictors-for-sexual-behaviour-profiles}
 }
 ```
 

@@ -146,7 +146,7 @@ Transformed a master's thesis into a **PhD-application-ready portfolio piece** d
 ### 4. Final Repository Structure
 
 ```
-master-thesis/
+predictors-for-sexual-behaviour-profiles/
 ├── 📘 README.md ⭐ (comprehensive, cluster profiles)
 ├── 🚀 SETUP.md ⭐ (5-notebook guide)
 ├── 📝 CHANGELOG_2025.md (this file)
