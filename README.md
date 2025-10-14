@@ -4,8 +4,18 @@
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![R](https://img.shields.io/badge/R-4.0+-blue.svg)](https://www.r-project.org/)
 
-**Master's Thesis Research Repository**  
-*Isabella Rodas*
+*Isabella Rodas, 2021*
+
+---
+
+## 📄 Research Manuscript
+
+This repository **reproduces and extends** the analysis presented in the following thesis:
+
+📑 **[Read the Full Thesis (PDF)](Individual%20Attributes%20and%20Social%20Network%20Predictors%20for%20Sexual%20Behaviour%20Pro%20les%20Among%20Adolescents%20in%20a%20Rural%20Area.pdf)**  
+🎤 **[View Defense Presentation (Spanish)](Presentation_Spanish.pdf)**
+
+The code, notebooks, and documentation in this repository provide a complete, reproducible implementation of the methodology described in the manuscript, with enhanced visualizations and extended analysis workflows.
 
 ---
 
@@ -22,12 +32,6 @@ This work specifically focuses on **sexual behavior profiles and their network p
 📎 **Learn more:** [isBARU Project Website](https://industrial.uniandes.edu.co/es/isbaru-la-importancia-de-los-comportamientos-sociales-en-la-salud-de-los-adolescentes-en-zonas-rurales-de-colombia)
 
 > **Note:** This repository represents a foundational analysis within the larger isBARU ecosystem. Many research questions remain open, and future work will expand on these findings for community-based interventions.
-
----
-
-> 🕐 **Timeline Note:** The original analysis was conducted in **2021** as part of my master's thesis research. This repository was organized and documented for public showcase in **October 2025**. The original analysis code is preserved in the `original_code/` directory.
-
-> ⚠️ **DATA PRIVACY DISCLAIMER:** The original research data contains sensitive information about adolescent participants and cannot be publicly shared. The Jupyter notebooks in this repository have been configured to run with **simulated data** for demonstration purposes. The analytical methods, code structure, and documentation accurately reflect the original 2021 thesis methodology, but the **specific numerical results shown in the notebook outputs are from simulated data and do not represent the actual research findings**. For the actual thesis results and conclusions, please refer to the thesis document (`Individual Attributes and Social Network Predictors for Sexual Behaviour Pro les Among Adolescents in a Rural Area.pdf`) and the defense presentation (`Presentation_Spanish.pdf`).
 
 ---
 
@@ -463,6 +467,22 @@ The repository underwent comprehensive testing and refinement to ensure all note
 
 **Reproducibility:** 
 All notebooks can now be run sequentially from Notebook 1 → 5 without errors, producing complete analysis outputs with simulated data.
+
+---
+
+## ⚠️ Important Disclaimers
+
+### 🕐 Timeline Note
+The original analysis was conducted in **2021** as part of my master's thesis research. This repository was organized and documented for public showcase in **October 2025**. The original analysis code is preserved in the `original_code/` directory.
+
+### 🔒 Data Privacy Disclaimer
+The original research data contains sensitive information about adolescent participants and cannot be publicly shared. The Jupyter notebooks in this repository have been configured to run with **simulated data** for demonstration purposes. 
+
+**Important:** The analytical methods, code structure, and documentation accurately reflect the original 2021 thesis methodology, but the **specific numerical results shown in the notebook outputs are from simulated data and do not represent the actual research findings**. 
+
+**For actual thesis results and conclusions**, please refer to:
+- 📑 [Thesis Document (PDF)](Individual%20Attributes%20and%20Social%20Network%20Predictors%20for%20Sexual%20Behaviour%20Pro%20les%20Among%20Adolescents%20in%20a%20Rural%20Area.pdf)
+- 🎤 [Defense Presentation (Spanish)](Presentation_Spanish.pdf)
 
 ---
 
