@@ -7,6 +7,24 @@
 **Master's Thesis Research Repository**  
 *Isabella Rodas*
 
+---
+
+## 🌍 Project Context
+
+This master's thesis is part of the larger **isBARU** research initiative, a collaborative international project examining the intersection of social networks and adolescent health in rural communities of Colombia.
+
+**About isBARU:**  
+isBARU (led by Prof. Felipe Montes, Universidad de Los Andes, and Dr. Ana Lucía Rodríguez, Florida International University) investigates how social networks influence adolescent health behaviors in the community of Santa Ana, Barú (Colombia). The project examines substance use, gender-based violence, sexual health, and physical activity using citizen-science tools, social network analysis, and clinical assessments.
+
+**This Thesis's Role:**  
+This work specifically focuses on **sexual behavior profiles and their network predictors** as one component of the broader isBARU initiative. While this thesis presents completed analysis from 2021, the isBARU project continues with ongoing research and future community interventions.
+
+📎 **Learn more:** [isBARU Project Website](https://industrial.uniandes.edu.co/es/isbaru-la-importancia-de-los-comportamientos-sociales-en-la-salud-de-los-adolescentes-en-zonas-rurales-de-colombia)
+
+> **Note:** This repository represents a foundational analysis within the larger isBARU ecosystem. Many research questions remain open, and future work will expand on these findings for community-based interventions.
+
+---
+
 > 🕐 **Timeline Note:** The original analysis was conducted in **2021** as part of my master's thesis research. This repository was organized and documented for public showcase in **October 2025**. The original analysis code is preserved in the `original_code/` directory.
 
 > ⚠️ **DATA PRIVACY DISCLAIMER:** The original research data contains sensitive information about adolescent participants and cannot be publicly shared. The Jupyter notebooks in this repository have been configured to run with **simulated data** for demonstration purposes. The analytical methods, code structure, and documentation accurately reflect the original 2021 thesis methodology, but the **specific numerical results shown in the notebook outputs are from simulated data and do not represent the actual research findings**. For the actual thesis results and conclusions, please refer to the thesis document (`Individual Attributes and Social Network Predictors for Sexual Behaviour Pro les Among Adolescents in a Rural Area.pdf`) and the defense presentation (`Presentation_Spanish.pdf`).
